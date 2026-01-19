@@ -1,0 +1,68 @@
+@import '../styles/variables';
+
+.app {
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $bauhaus-white;
+    z-index: 9999;
+
+    &__shapes {
+        display: flex;
+        gap: $space-lg;
+        align-items: center;
+    }
+
+    &__circle {
+        width: 40px;
+        height: 40px;
+        background: $bauhaus-red;
+        border-radius: 50%;
+        animation: pulse 1s ease infinite;
+    }
+
+    &__square {
+        width: 35px;
+        height: 35px;
+        background: $bauhaus-blue;
+        animation: pulse 1s ease 0.2s infinite;
+    }
+
+    &__triangle {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 35px solid $bauhaus-yellow;
+        animation: pulse 1s ease 0.4s infinite;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,109 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.about {
+    background: $bauhaus-light;
+    position: relative;
+}
+
+.about__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3xl;
+
+    @include lg {
+        grid-template-columns: 300px 1fr;
+    }
+}
+
+.about__photo {
+    position: relative;
+}
+
+.about__photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1;
+    background: $bauhaus-black;
+    margin: 0 auto;
+
+    // Offset colored square
+    &::before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 100%;
+        height: 100%;
+        background: $bauhaus-red;
+        z-index: -1;
+    }
+}
+
+.about__photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $text-6xl;
+    font-weight: $font-black;
+    color: $bauhaus-white;
+}
+
+.about__text {
+    padding-top: $space-md;
+}
+
+.about__intro {
+    font-size: $text-xl;
+    font-weight: $font-light;
+    line-height: 1.8;
+    margin-bottom: $space-xl;
+
+    ::ng-deep strong {
+        font-weight: $font-black;
+        background: $bauhaus-yellow;
+        padding: 0 $space-xs;
+    }
+}
+
+.about__description {
+    color: $text-secondary;
+    margin-bottom: $space-2xl;
+    line-height: 1.7;
+}
+
+.about__competencies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-md;
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.competency-card {
+    @include card;
+
+    &__icon {
+        font-size: $text-3xl;
+        margin-bottom: $space-sm;
+    }
+
+    &__title {
+        font-size: $text-base;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        margin-bottom: $space-sm;
+    }
+
+    &__text {
+        font-size: $text-sm;
+        color: $text-secondary;
+        line-height: 1.6;
+        margin: 0;
+    }
+}

@@ -1,0 +1,301 @@
+{
+    "nav": {
+        "about": "About",
+        "experience": "Experience",
+        "skills": "Skills",
+        "projects": "Projects",
+        "education": "Education",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Welcome",
+        "subtitle": "Sociologist • Project Mediator • Interdisciplinary Education",
+        "tagline": "Building bridges between communities, education and conservation",
+        "cta": {
+            "discover": "Discover my work",
+            "contact": "Contact"
+        }
+    },
+    "about": {
+        "title": "About Me",
+        "intro": "I am a professional committed to social transformation through education, art and community participation. With more than <strong>15 years of experience</strong> in designing, coordinating and leading educational, social and community projects.",
+        "description": "My career is characterized by a deeply participatory approach, centered on people, recognition of local knowledge and the collective construction of situated solutions. I have worked in diverse territorial contexts, from vulnerable communities in Brazil to national-scale programs in Chile.",
+        "competencies": {
+            "territorial": {
+                "title": "Territorial Sensitivity",
+                "text": "Effective engagement with coastal and rural communities, respecting ancestral knowledge."
+            },
+            "participatory": {
+                "title": "Participatory Methods",
+                "text": "Facilitation of dialogues, collective mapping and co-creation processes with communities."
+            },
+            "education": {
+                "title": "Interdisciplinary Education",
+                "text": "Integration of art, science and technology in transformative educational experiences."
+            },
+            "environmental": {
+                "title": "Environmental Awareness",
+                "text": "Promoting conservation through community-based and sustainable approaches."
+            }
+        }
+    },
+    "experience": {
+        "title": "Professional Journey",
+        "subtitle": "Over 15 years building connections between communities, education and territory",
+        "items": {
+            "kosmofono": {
+                "title": "Producer - Kosmófono Project",
+                "org": "Faculty of Astronomy, University of Chile",
+                "date": "2025 - 2026",
+                "description": "Leadership of the National Public Science Fund winning project. A scientific outreach platform that articulates astronomy, sound art and education to translate complex research into accessible experiences.",
+                "tags": [
+                    "Public Science",
+                    "Interdisciplinary",
+                    "Innovation"
+                ]
+            },
+            "dirac": {
+                "title": "Consultant - DIRAC",
+                "org": "Ministry of Foreign Affairs of Chile",
+                "date": "2025",
+                "description": "Strategic management of international cultural projects. Development of tender documents for Chile Guest of Honor at Frankfurt Book Fair 2027. Design of global-reach reading mediation experiences.",
+                "tags": [
+                    "Cultural Diplomacy",
+                    "International Projection"
+                ]
+            },
+            "cecrea": {
+                "title": "National Networks & Territory Coordinator",
+                "org": "CECREA Program, Ministry of Cultures, Arts and Heritage",
+                "date": "2020 - 2024",
+                "description": "National lead for strategic partnerships with universities, museums and foundations across 13 regions. Production of large-scale events (500+ participants). Budget management, tenders and interdisciplinary teams.",
+                "tags": [
+                    "National Leadership",
+                    "Strategic Alliances",
+                    "Team Management",
+                    "Arts Education"
+                ],
+                "highlight": true
+            },
+            "biblioteca": {
+                "title": "Reading Mediation Manager",
+                "org": "Gabriela Mistral Regional Library, Coquimbo Region",
+                "date": "2019 - 2020",
+                "description": "Design and coordination of reading promotion programs, book clubs and literary creation activities. Strengthening territorial alliances and connections with national writers.",
+                "tags": [
+                    "Cultural Mediation",
+                    "Educational Programs"
+                ]
+            },
+            "maradentro": {
+                "title": "Consultant - Community Relations",
+                "org": "Mar Adentro Foundation",
+                "date": "2019",
+                "description": "Development of collaborative artistic mediation processes in coastal territories of Valparaíso. Facilitation of collective mapping, territorial drifts and dialogue tables on heritage, landscape and environment.",
+                "tags": [
+                    "Art & Nature",
+                    "Coastal Territory",
+                    "Conservation"
+                ]
+            },
+            "pnl": {
+                "title": "National Regional Coordinator",
+                "org": "National Reading Plan, Book Council",
+                "date": "2014 - 2017",
+                "description": "Coordination of 'Dialogues in Movement' program across all regions of Chile. Management of inter-institutional alliances with MINEDUC, DIBAM, INJUV and cultural organizations.",
+                "tags": [
+                    "National Reach",
+                    "Institutional Networks"
+                ]
+            },
+            "techo": {
+                "title": "Social Projects Coordinator",
+                "org": "TECHO Chile, O'Higgins Region",
+                "date": "2012 - 2014",
+                "description": "Comprehensive coordination of housing projects in 4 settlements. Direct work with communities and social leaders. Strengthening community fabric and local leadership.",
+                "tags": [
+                    "Community Development",
+                    "Social Housing"
+                ]
+            },
+            "spais": {
+                "title": "Servicio País Culture Professional",
+                "org": "Foundation for Overcoming Poverty",
+                "date": "2011 - 2012",
+                "description": "Development of community participation projects in vulnerable neighborhoods of Gorbea. Work with women weavers, promotion of traditional knowledge recognition and training of cultural managers.",
+                "tags": [
+                    "Local Culture",
+                    "Gender Focus"
+                ]
+            },
+            "onu": {
+                "title": "Internship - UN-Habitat",
+                "org": "Regional Office for Latin America and the Caribbean, Brazil",
+                "date": "2008 - 2009",
+                "description": "Community participation assessment in Favela Boa Vista, Niterói. Application of qualitative methodologies, interviews and focus groups. Analysis with Atlas.ti and SPSS.",
+                "tags": [
+                    "Social Research",
+                    "International"
+                ]
+            }
+        }
+    },
+    "skills": {
+        "title": "Professional Competencies",
+        "subtitle": "Capabilities developed over more than a decade of territorial work",
+        "items": {
+            "strategic": {
+                "title": "Strategic Vision",
+                "text": "Planning national-scale programs, articulating institutional objectives with territorial needs.",
+                "progress": 95
+            },
+            "facilitation": {
+                "title": "Dialogue Facilitation",
+                "text": "Creating meeting spaces between communities, institutions and diverse stakeholders for building agreements.",
+                "progress": 98
+            },
+            "teamwork": {
+                "title": "Team Coordination",
+                "text": "Leadership of interdisciplinary groups, large-scale event production and support for regional teams.",
+                "progress": 92
+            },
+            "budget": {
+                "title": "Resource Management",
+                "text": "Budget administration, tenders, contracts and administrative procedures in public institutions.",
+                "progress": 88
+            },
+            "territorial": {
+                "title": "Territorial Rootedness",
+                "text": "Sensitivity to integrate traditional knowledge, local identities and gender approaches in situated projects.",
+                "progress": 96
+            },
+            "networks": {
+                "title": "Institutional Networks",
+                "text": "Building strategic alliances with universities, foundations, museums and public and private organizations.",
+                "progress": 94
+            }
+        },
+        "languages": {
+            "title": "Languages",
+            "native": "Native",
+            "items": [
+                {
+                    "name": "Spanish",
+                    "level": "Native"
+                },
+                {
+                    "name": "English",
+                    "level": "B2"
+                },
+                {
+                    "name": "Portuguese",
+                    "level": "A2"
+                }
+            ]
+        }
+    },
+    "projects": {
+        "title": "Featured Projects",
+        "subtitle": "Initiatives reflecting my commitment to education, community and territory",
+        "items": {
+            "kosmofono": {
+                "title": "Kosmófono: Science and Music of Black Holes",
+                "description": "A scientific outreach platform that translates astronomical research into sound and educational experiences. Includes an interactive app, territorial workshops and mediation processes for children, youth and communities.",
+                "org": "University of Chile",
+                "year": "2026",
+                "badge": "Public Science Fund",
+                "featured": true
+            },
+            "somos": {
+                "title": "We Are Landscape",
+                "description": "Collaborative artistic mediation experience in Playa Ancha, Valparaíso. Collective mapping, territorial drifts and dialogue tables on heritage, landscape and environment in the coastal watershed.",
+                "org": "Mar Adentro Foundation",
+                "year": "2019"
+            },
+            "cecrea": {
+                "title": "CECREA National Network",
+                "description": "Strengthening the network of Artistic Creation Centers across 13 regions. Partnerships with universities, museums and foundations. Production of national and international arts education gatherings.",
+                "org": "Ministry of Cultures",
+                "year": "2020-2024"
+            },
+            "dialogos": {
+                "title": "Dialogues in Movement",
+                "description": "National program of encounters between authors and high school students across all regions of Chile. Methodological design, territorial coordination and inter-institutional alliance management.",
+                "org": "National Reading Plan",
+                "year": "2014-2017"
+            }
+        }
+    },
+    "education": {
+        "title": "Academic Background",
+        "degrees": {
+            "master": {
+                "badge": "Master's Degree",
+                "title": "Interdisciplinary Arts Education",
+                "institution": "University of Barcelona",
+                "year": "2018",
+                "description": "Training oriented towards the integration of artistic practices, critical education, cultural mediation and pedagogical processes with a social and community focus."
+            },
+            "sociology": {
+                "badge": "Professional Degree",
+                "title": "Sociology",
+                "institution": "Alberto Hurtado University",
+                "year": "2011",
+                "description": "Training in social analysis, qualitative and quantitative research, public policy, community development and citizen participation."
+            }
+        },
+        "certifications": {
+            "title": "Certifications & Diplomas",
+            "items": [
+                {
+                    "title": "Pre-Texts Methodology",
+                    "org": "Harvard University - Cultural Agents",
+                    "year": "2017"
+                },
+                {
+                    "title": "Logical Framework Methodology",
+                    "org": "Alberto Hurtado University",
+                    "year": "2012"
+                },
+                {
+                    "title": "Rights Approach for Children",
+                    "org": "ACHNU Association",
+                    "year": "2022"
+                },
+                {
+                    "title": "FONDART Training Fellow",
+                    "org": "Chile Culture Fund",
+                    "year": "2017-2018"
+                }
+            ]
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Interested in collaborating? I'm available for new opportunities",
+        "email": {
+            "label": "Email",
+            "value": "lauravargasgaete@gmail.com"
+        },
+        "phone": {
+            "label": "Phone",
+            "value": "+56 9 4586 2045"
+        },
+        "location": {
+            "label": "Location",
+            "value": "Santiago, Chile"
+        },
+        "linkedin": {
+            "label": "LinkedIn",
+            "value": "linkedin.com/in/LauraVargasGaete",
+            "url": "https://linkedin.com/in/LauraVargasGaete"
+        },
+        "cta": {
+            "text": "Available for leadership positions in educational, community and participatory conservation projects.",
+            "button": "Send message"
+        }
+    },
+    "footer": {
+        "tagline": "Community • Education • Territory"
+    }
+}

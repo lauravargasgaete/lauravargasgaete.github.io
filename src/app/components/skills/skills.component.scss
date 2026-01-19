@@ -1,0 +1,144 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.skills {
+    background: $bauhaus-white;
+    position: relative;
+}
+
+.skills__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-lg;
+    margin-bottom: $space-3xl;
+
+    @media (max-width: $breakpoint-lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.skill-card {
+    @include card;
+    position: relative;
+
+    // Color accent stripe
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: $border-heavy;
+        background: $bauhaus-blue;
+    }
+
+    &:nth-child(2)::before {
+        background: $bauhaus-red;
+    }
+
+    &:nth-child(3)::before {
+        background: $bauhaus-yellow;
+    }
+
+    &:nth-child(4)::before {
+        background: $bauhaus-yellow;
+    }
+
+    &:nth-child(5)::before {
+        background: $bauhaus-blue;
+    }
+
+    &:nth-child(6)::before {
+        background: $bauhaus-red;
+    }
+
+    &__icon {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $bauhaus-black;
+        margin-bottom: $space-md;
+
+        ::ng-deep svg {
+            width: 24px;
+            height: 24px;
+            color: $bauhaus-white;
+        }
+    }
+
+    &__title {
+        font-size: $text-base;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        margin-bottom: $space-sm;
+    }
+
+    &__text {
+        font-size: $text-sm;
+        color: $text-secondary;
+        line-height: 1.6;
+        margin-bottom: $space-md;
+    }
+
+    &__bar {
+        height: 8px;
+        background: $bauhaus-light;
+        position: relative;
+    }
+
+    &__progress {
+        height: 100%;
+        background: $bauhaus-black;
+        transition: width 1s ease;
+    }
+}
+
+.skills__languages {
+    text-align: center;
+    padding-top: $space-2xl;
+    border-top: $border-thick solid $bauhaus-black;
+}
+
+.skills__languages-title {
+    font-size: $text-2xl;
+    font-weight: $font-black;
+    text-transform: uppercase;
+    margin-bottom: $space-xl;
+}
+
+.skills__languages-grid {
+    display: flex;
+    justify-content: center;
+    gap: $space-3xl;
+
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        gap: $space-lg;
+    }
+}
+
+.language-item {
+    text-align: center;
+    padding: $space-lg;
+    background: $bauhaus-light;
+    border: $border-thick solid $bauhaus-black;
+    min-width: 150px;
+
+    &__name {
+        display: block;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        margin-bottom: $space-xs;
+    }
+
+    &__level {
+        font-size: $text-sm;
+        color: $text-secondary;
+    }
+}

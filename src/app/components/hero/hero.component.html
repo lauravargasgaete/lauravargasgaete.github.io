@@ -1,0 +1,26 @@
+<section class="hero" id="hero">
+    <!-- Geometric shapes -->
+    <div class="hero__geo hero__geo--circle"></div>
+    <div class="hero__geo hero__geo--square"></div>
+    <div class="hero__geo hero__geo--triangle"></div>
+
+    <div class="hero__content">
+        <p class="hero__greeting">{{ i18n.t('hero.greeting') }}</p>
+        <h1 class="hero__title">Laura Vargas Gaete</h1>
+        <p class="hero__subtitle">{{ i18n.t('hero.subtitle') }}</p>
+        <p class="hero__tagline">{{ i18n.t('hero.tagline') }}</p>
+
+        <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary" (click)="scrollTo($event, '#projects')">{{
+                i18n.t('hero.cta.discover') }}</a>
+            <a href="#contact" class="btn btn--outline" (click)="scrollTo($event, '#contact')">{{
+                i18n.t('hero.cta.contact') }}</a>
+        </div>
+    </div>
+
+    <a href="#about" class="hero__scroll" (click)="scrollTo($event, '#about')" aria-label="Scroll down">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
+    </a>
+</section>

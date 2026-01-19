@@ -1,0 +1,36 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.footer {
+    padding: $space-xl 0;
+    background: $bauhaus-black;
+    color: $bauhaus-white;
+    border-top: $border-heavy solid $bauhaus-red;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $breakpoint-sm) {
+        flex-direction: column;
+        gap: $space-md;
+        text-align: center;
+    }
+}
+
+.footer__copyright {
+    font-size: $text-sm;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.footer__tagline {
+    font-size: $text-sm;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+    color: $bauhaus-yellow;
+}

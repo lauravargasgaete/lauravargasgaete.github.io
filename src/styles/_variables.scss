@@ -1,0 +1,88 @@
+// =====================================================
+// DESIGN TOKENS - Bauhaus Style
+// =====================================================
+
+// Primary Colors - Classic Bauhaus
+$bauhaus-red: #e63946;
+$bauhaus-yellow: #ffbe0b;
+$bauhaus-blue: #3a86ff;
+
+// Neutral Colors
+$bauhaus-black: #1a1a1a;
+$bauhaus-dark: #2d2d2d;
+$bauhaus-gray: #6b6b6b;
+$bauhaus-light: #f5f5f5;
+$bauhaus-white: #ffffff;
+
+// Background shades
+$bg-primary: $bauhaus-white;
+$bg-secondary: $bauhaus-light;
+$bg-dark: $bauhaus-black;
+$bg-accent: $bauhaus-dark;
+
+// Text Colors
+$text-primary: $bauhaus-black;
+$text-secondary: $bauhaus-gray;
+$text-inverse: $bauhaus-white;
+
+// Typography - Single Font
+$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+// Font Sizes
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 2rem;
+$text-4xl: 2.5rem;
+$text-5xl: 3.5rem;
+$text-6xl: 4.5rem;
+$text-7xl: 6rem;
+
+// Font Weights
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+$font-black: 900;
+
+// Spacing
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+$space-4xl: 6rem;
+$space-5xl: 8rem;
+
+// Borders & Radius
+$border-thin: 1px;
+$border-thick: 3px;
+$border-heavy: 6px;
+
+$radius-none: 0;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-circle: 50%;
+
+// Transitions
+$transition-fast: 150ms ease;
+$transition-base: 250ms ease;
+$transition-slow: 400ms ease;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+
+// Z-index
+$z-background: -1;
+$z-default: 1;
+$z-sticky: 100;
+$z-modal: 200;

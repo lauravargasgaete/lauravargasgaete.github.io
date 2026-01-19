@@ -1,0 +1,29 @@
+<section class="about section" id="about">
+    <div class="container">
+        <h2 class="section__title section__title--gradient">{{ i18n.t('about.title') }}</h2>
+
+        <div class="about__content">
+            <div class="about__photo">
+                <div class="about__photo-frame">
+                    <div class="about__photo-placeholder">
+                        <span>LV</span>
+                    </div>
+                    <div class="about__photo-glow"></div>
+                </div>
+            </div>
+
+            <div class="about__text">
+                <p class="about__intro" [innerHTML]="i18n.t('about.intro')"></p>
+                <p class="about__description">{{ i18n.t('about.description') }}</p>
+
+                <div class="about__competencies">
+                    <div class="competency-card" *ngFor="let comp of competencies">
+                        <div class="competency-card__icon">{{ competencyIcons[comp[0]] || '✨' }}</div>
+                        <h3 class="competency-card__title">{{ comp[1].title }}</h3>
+                        <p class="competency-card__text">{{ comp[1].text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

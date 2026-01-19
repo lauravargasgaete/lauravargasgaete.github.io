@@ -1,0 +1,150 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: $bauhaus-white;
+    overflow: hidden;
+    padding-top: 80px; // Header offset
+}
+
+// Geometric decorations
+.hero__geo {
+    position: absolute;
+    pointer-events: none;
+
+    &--circle {
+        width: 300px;
+        height: 300px;
+        background: $bauhaus-red;
+        border-radius: 50%;
+        top: 10%;
+        right: -100px;
+
+        @include lg {
+            width: 400px;
+            height: 400px;
+            right: 5%;
+        }
+    }
+
+    &--square {
+        width: 150px;
+        height: 150px;
+        background: $bauhaus-blue;
+        bottom: 15%;
+        left: 5%;
+        transform: rotate(15deg);
+
+        @include lg {
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    &--triangle {
+        width: 0;
+        height: 0;
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+        border-bottom: 140px solid $bauhaus-yellow;
+        top: 60%;
+        right: 15%;
+
+        @include lg {
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 175px solid $bauhaus-yellow;
+        }
+    }
+}
+
+.hero__content {
+    position: relative;
+    z-index: 10;
+    @include container;
+    max-width: 800px;
+}
+
+.hero__greeting {
+    font-size: $text-lg;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: $space-md;
+    display: inline-block;
+    background: $bauhaus-yellow;
+    padding: $space-xs $space-sm;
+}
+
+.hero__title {
+    font-size: $text-5xl;
+    font-weight: $font-black;
+    line-height: 0.95;
+    margin-bottom: $space-lg;
+    text-transform: uppercase;
+
+    @include lg {
+        font-size: $text-7xl;
+    }
+}
+
+.hero__subtitle {
+    font-size: $text-xl;
+    font-weight: $font-light;
+    margin-bottom: $space-md;
+    max-width: 500px;
+
+    @include lg {
+        font-size: $text-2xl;
+    }
+}
+
+.hero__tagline {
+    font-size: $text-lg;
+    font-weight: $font-medium;
+    margin-bottom: $space-2xl;
+    padding-left: $space-md;
+    border-left: $border-heavy solid $bauhaus-red;
+}
+
+.hero__cta {
+    display: flex;
+    gap: $space-md;
+    flex-wrap: wrap;
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: $space-2xl;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $bauhaus-black;
+    animation: bounce 2s infinite;
+
+    svg {
+        stroke-width: 3;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}

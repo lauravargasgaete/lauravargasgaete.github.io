@@ -1,0 +1,173 @@
+// =====================================================
+// SCSS MIXINS - Bauhaus Patterns
+// =====================================================
+
+@import 'variables';
+
+// Responsive breakpoints
+@mixin sm {
+    @media (min-width: $breakpoint-sm) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (min-width: $breakpoint-md) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (min-width: $breakpoint-lg) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media (min-width: $breakpoint-xl) {
+        @content;
+    }
+}
+
+// Geometric shapes
+@mixin circle($size, $color: $bauhaus-red) {
+    width: $size;
+    height: $size;
+    border-radius: $radius-circle;
+    background: $color;
+}
+
+@mixin square($size, $color: $bauhaus-blue) {
+    width: $size;
+    height: $size;
+    background: $color;
+}
+
+@mixin triangle($size, $color: $bauhaus-yellow, $direction: up) {
+    width: 0;
+    height: 0;
+    border-style: solid;
+
+    @if $direction ==up {
+        border-width: 0 calc($size / 2) $size calc($size / 2);
+        border-color: transparent transparent $color transparent;
+    }
+
+    @else if $direction ==down {
+        border-width: $size calc($size / 2) 0 calc($size / 2);
+        border-color: $color transparent transparent transparent;
+    }
+
+    @else if $direction ==left {
+        border-width: calc($size / 2) $size calc($size / 2) 0;
+        border-color: transparent $color transparent transparent;
+    }
+
+    @else if $direction ==right {
+        border-width: calc($size / 2) 0 calc($size / 2) $size;
+        border-color: transparent transparent transparent $color;
+    }
+}
+
+// Container
+@mixin container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $space-lg;
+}
+
+// Section padding
+@mixin section-padding {
+    padding: $space-4xl 0;
+
+    @include lg {
+        padding: $space-5xl 0;
+    }
+}
+
+// Button base - Bauhaus style
+@mixin button-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $space-md $space-xl;
+    font-family: $font-primary;
+    font-size: $text-sm;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: $border-thick solid transparent;
+    cursor: pointer;
+    transition: all $transition-base;
+    text-decoration: none;
+}
+
+// Primary button
+@mixin button-primary {
+    @include button-base;
+    background: $bauhaus-black;
+    color: $bauhaus-white;
+    border-color: $bauhaus-black;
+
+    &:hover {
+        background: $bauhaus-red;
+        border-color: $bauhaus-red;
+    }
+}
+
+// Outline button
+@mixin button-outline {
+    @include button-base;
+    background: transparent;
+    color: $bauhaus-black;
+    border-color: $bauhaus-black;
+
+    &:hover {
+        background: $bauhaus-black;
+        color: $bauhaus-white;
+    }
+}
+
+// Card - Bauhaus minimal
+@mixin card {
+    background: $bauhaus-white;
+    border: $border-thick solid $bauhaus-black;
+    padding: $space-xl;
+    transition: transform $transition-base, box-shadow $transition-base;
+
+    &:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 0 $bauhaus-black;
+    }
+}
+
+// Focus visible
+@mixin focus-visible {
+    &:focus-visible {
+        outline: $border-thick solid $bauhaus-blue;
+        outline-offset: 2px;
+    }
+}
+
+// Underline accent
+@mixin underline-accent($color: $bauhaus-red, $height: 4px) {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: $height;
+        background: $color;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform $transition-base;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+}

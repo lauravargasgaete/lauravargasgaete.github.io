@@ -1,0 +1,117 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.projects {
+    background: $bauhaus-light;
+    position: relative;
+}
+
+.projects__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-xl;
+
+    @media (max-width: $breakpoint-md) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project-card {
+    background: $bauhaus-white;
+    border: $border-thick solid $bauhaus-black;
+    transition: transform $transition-base, box-shadow $transition-base;
+
+    &:hover {
+        transform: translate(-6px, -6px);
+        box-shadow: 12px 12px 0 $bauhaus-black;
+    }
+
+    &--featured {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+
+        @media (max-width: $breakpoint-md) {
+            grid-column: span 1;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__image {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .project-card--featured & {
+            height: auto;
+            min-height: 250px;
+        }
+
+        // Geometric pattern overlay
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: $bauhaus-yellow;
+        }
+    }
+
+    &__icon {
+        font-size: 4rem;
+    }
+
+    &__content {
+        padding: $space-xl;
+    }
+
+    &__year {
+        display: inline-block;
+        font-size: $text-xs;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        background: $bauhaus-black;
+        color: $bauhaus-white;
+        padding: $space-xs $space-sm;
+        margin-bottom: $space-sm;
+    }
+
+    &__title {
+        font-size: $text-xl;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        margin-bottom: $space-md;
+    }
+
+    &__description {
+        font-size: $text-sm;
+        color: $text-secondary;
+        line-height: 1.7;
+        margin-bottom: $space-md;
+    }
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        gap: $space-md;
+        flex-wrap: wrap;
+    }
+
+    &__org {
+        font-size: $text-sm;
+        color: $text-secondary;
+    }
+
+    &__badge {
+        font-size: $text-xs;
+        font-weight: $font-bold;
+        text-transform: uppercase;
+        padding: $space-xs $space-sm;
+        background: $bauhaus-red;
+        color: $bauhaus-white;
+    }
+}

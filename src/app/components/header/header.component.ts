@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +10,21 @@ export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
 
-  constructor(public i18n: I18nService) {}
+  constructor(public translate: TranslateService) {}
+
+  get currentLang(): string {
+    return this.translate.currentLang || this.translate.defaultLang || 'es';
+  }
 
   @HostListener('window:scroll')
   onScroll(): void {
     this.isScrolled = window.scrollY > 50;
+  }
+
+  toggleLanguage(): void {
+    const newLang = this.currentLang === 'es' ? 'en' : 'es';
+    this.translate.use(newLang);
+    localStorage.setItem('preferredLang', newLang);
   }
 
   toggleMenu(): void {

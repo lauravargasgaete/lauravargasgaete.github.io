@@ -5,25 +5,25 @@
         </a>
 
         <ul class="nav__menu" [class.active]="isMobileMenuOpen">
-            <li><a href="#about" class="nav__link" (click)="scrollTo($event, '#about')">{{ i18n.t('nav.about') }}</a>
-            </li>
-            <li><a href="#experience" class="nav__link" (click)="scrollTo($event, '#experience')">{{
-                    i18n.t('nav.experience') }}</a></li>
-            <li><a href="#skills" class="nav__link" (click)="scrollTo($event, '#skills')">{{ i18n.t('nav.skills') }}</a>
-            </li>
-            <li><a href="#projects" class="nav__link" (click)="scrollTo($event, '#projects')">{{ i18n.t('nav.projects')
+            <li><a href="#about" class="nav__link" (click)="scrollTo($event, '#about')">{{ 'nav.about' | translate
                     }}</a></li>
-            <li><a href="#education" class="nav__link" (click)="scrollTo($event, '#education')">{{
-                    i18n.t('nav.education') }}</a></li>
-            <li><a href="#contact" class="nav__link" (click)="scrollTo($event, '#contact')">{{ i18n.t('nav.contact')
+            <li><a href="#experience" class="nav__link" (click)="scrollTo($event, '#experience')">{{ 'nav.experience' |
+                    translate }}</a></li>
+            <li><a href="#skills" class="nav__link" (click)="scrollTo($event, '#skills')">{{ 'nav.skills' | translate
+                    }}</a></li>
+            <li><a href="#projects" class="nav__link" (click)="scrollTo($event, '#projects')">{{ 'nav.projects' |
+                    translate }}</a></li>
+            <li><a href="#education" class="nav__link" (click)="scrollTo($event, '#education')">{{ 'nav.education' |
+                    translate }}</a></li>
+            <li><a href="#contact" class="nav__link" (click)="scrollTo($event, '#contact')">{{ 'nav.contact' | translate
                     }}</a></li>
         </ul>
 
         <div class="nav__actions">
-            <button class="lang-toggle" (click)="i18n.toggleLanguage()" aria-label="Toggle language">
-                <span class="lang-toggle__current">{{ i18n.lang.toUpperCase() }}</span>
+            <button class="lang-toggle" (click)="toggleLanguage()" aria-label="Toggle language">
+                <span class="lang-toggle__current">{{ currentLang.toUpperCase() }}</span>
                 <span class="lang-toggle__separator">/</span>
-                <span class="lang-toggle__alt">{{ i18n.lang === 'es' ? 'EN' : 'ES' }}</span>
+                <span class="lang-toggle__alt">{{ currentLang === 'es' ? 'EN' : 'ES' }}</span>
             </button>
 
             <button class="nav__mobile-toggle" [class.active]="isMobileMenuOpen" (click)="toggleMenu()"

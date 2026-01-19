@@ -1,21 +1,27 @@
-<section class="experience section" id="experience">
+<section class="experience section section--dark" id="experience">
     <div class="container">
-        <h2 class="section__title section__title--gradient">{{ i18n.t('experience.title') }}</h2>
-        <p class="section__subtitle">{{ i18n.t('experience.subtitle') }}</p>
+        <div class="section__header">
+            <h2 class="section__title">{{ 'experience.title' | translate }}</h2>
+            <p class="section__subtitle">{{ 'experience.subtitle' | translate }}</p>
+        </div>
 
         <div class="timeline">
             <div class="timeline__line"></div>
 
-            <div class="timeline__item" *ngFor="let item of items; let i = index"
-                [class.timeline__item--highlight]="item[1].highlight">
-                <div class="timeline__marker" [class.timeline__marker--highlight]="item[1].highlight"></div>
+            <div class="timeline__item" *ngFor="let key of experienceKeys; let first = first"
+                [class.timeline__item--highlight]="first">
+                <div class="timeline__marker" [class.timeline__marker--highlight]="first"></div>
                 <div class="timeline__content">
-                    <span class="timeline__date">{{ item[1].date }}</span>
-                    <h3 class="timeline__title">{{ item[1].title }}</h3>
-                    <p class="timeline__org">{{ item[1].org }}</p>
-                    <p class="timeline__description">{{ item[1].description }}</p>
+                    <span class="timeline__date">{{ 'experience.items.' + key + '.date' | translate }}</span>
+                    <h3 class="timeline__title">{{ 'experience.items.' + key + '.title' | translate }}</h3>
+                    <p class="timeline__org">{{ 'experience.items.' + key + '.org' | translate }}</p>
+                    <p class="timeline__description">{{ 'experience.items.' + key + '.description' | translate }}</p>
                     <div class="timeline__tags">
-                        <span class="tag" *ngFor="let tag of item[1].tags">{{ tag }}</span>
+                        <span class="tag">{{ 'experience.items.' + key + '.tags.0' | translate }}</span>
+                        <span class="tag">{{ 'experience.items.' + key + '.tags.1' | translate }}</span>
+                        <span class="tag" *ngIf="('experience.items.' + key + '.tags.2' | translate) as tag">
+                            <ng-container *ngIf="!tag.startsWith('experience.')">{{ tag }}</ng-container>
+                        </span>
                     </div>
                 </div>
             </div>

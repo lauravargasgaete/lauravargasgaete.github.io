@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,7 +7,7 @@ import { I18nService } from '../../services/i18n.service';
   styleUrls: ['./hero.component.scss']
 })
 export class HeroComponent {
-  constructor(public i18n: I18nService) {}
+  constructor(public translate: TranslateService) {}
 
   scrollTo(event: Event, target: string): void {
     event.preventDefault();

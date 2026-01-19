@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
@@ -9,5 +9,5 @@ import { I18nService } from '../../services/i18n.service';
 export class FooterComponent {
   currentYear = new Date().getFullYear();
 
-  constructor(public i18n: I18nService) {}
+  constructor(public translate: TranslateService) {}
 }

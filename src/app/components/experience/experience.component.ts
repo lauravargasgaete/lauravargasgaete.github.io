@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
-
-interface ExperienceItem {
-  title: string;
-  org: string;
-  date: string;
-  description: string;
-  tags: string[];
-  highlight?: boolean;
-}
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-experience',
@@ -16,10 +7,7 @@ interface ExperienceItem {
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-  constructor(public i18n: I18nService) {}
+  experienceKeys = ['capitalazul', 'cecrea', 'kosmofono', 'udechile', 'culture'];
 
-  get items(): [string, ExperienceItem][] {
-    const exp = this.i18n.getSection<Record<string, ExperienceItem>>('experience.items');
-    return Object.entries(exp);
-  }
+  constructor(public translate: TranslateService) {}
 }

@@ -1,7 +1,9 @@
 <section class="contact section" id="contact">
     <div class="container">
-        <h2 class="section__title section__title--gradient">{{ i18n.t('contact.title') }}</h2>
-        <p class="section__subtitle">{{ i18n.t('contact.subtitle') }}</p>
+        <div class="section__header">
+            <h2 class="section__title">{{ 'contact.title' | translate }}</h2>
+            <p class="section__subtitle">{{ 'contact.subtitle' | translate }}</p>
+        </div>
 
         <div class="contact__content">
             <div class="contact__info">
@@ -13,8 +15,9 @@
                         </svg>
                     </div>
                     <div class="contact__details">
-                        <h3>{{ email?.label }}</h3>
-                        <a [href]="'mailto:' + email?.value">{{ email?.value }}</a>
+                        <h3>{{ 'contact.email.label' | translate }}</h3>
+                        <a [href]="'mailto:' + ('contact.email.value' | translate)">{{ 'contact.email.value' | translate
+                            }}</a>
                     </div>
                 </div>
 
@@ -26,8 +29,9 @@
                         </svg>
                     </div>
                     <div class="contact__details">
-                        <h3>{{ phone?.label }}</h3>
-                        <a [href]="'tel:' + phone?.value">{{ phone?.value }}</a>
+                        <h3>{{ 'contact.phone.label' | translate }}</h3>
+                        <a [href]="'tel:' + ('contact.phone.value' | translate)">{{ 'contact.phone.value' | translate
+                            }}</a>
                     </div>
                 </div>
 
@@ -39,8 +43,8 @@
                         </svg>
                     </div>
                     <div class="contact__details">
-                        <h3>{{ location?.label }}</h3>
-                        <p>{{ location?.value }}</p>
+                        <h3>{{ 'contact.location.label' | translate }}</h3>
+                        <p>{{ 'contact.location.value' | translate }}</p>
                     </div>
                 </div>
 
@@ -54,15 +58,16 @@
                     </div>
                     <div class="contact__details">
                         <h3>LinkedIn</h3>
-                        <a [href]="linkedin?.url" target="_blank" rel="noopener">{{ linkedin?.value }}</a>
+                        <a [href]="'contact.linkedin.url' | translate" target="_blank" rel="noopener">{{
+                            'contact.linkedin.value' | translate }}</a>
                     </div>
                 </div>
             </div>
 
             <div class="contact__cta">
-                <p class="contact__cta-text">{{ i18n.t('contact.cta.text') }}</p>
-                <a [href]="'mailto:' + email?.value" class="btn btn--primary btn--large">{{ i18n.t('contact.cta.button')
-                    }}</a>
+                <p class="contact__cta-text">{{ 'contact.cta.text' | translate }}</p>
+                <a [href]="'mailto:' + ('contact.email.value' | translate)" class="btn btn--primary btn--large">{{
+                    'contact.cta.button' | translate }}</a>
             </div>
         </div>
     </div>

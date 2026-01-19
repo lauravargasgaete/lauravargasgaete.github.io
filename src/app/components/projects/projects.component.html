@@ -1,21 +1,27 @@
-<section class="projects section" id="projects">
+<section class="projects section section--light" id="projects">
     <div class="container">
-        <h2 class="section__title section__title--gradient">{{ i18n.t('projects.title') }}</h2>
-        <p class="section__subtitle">{{ i18n.t('projects.subtitle') }}</p>
+        <div class="section__header">
+            <h2 class="section__title">{{ 'projects.title' | translate }}</h2>
+            <p class="section__subtitle">{{ 'projects.subtitle' | translate }}</p>
+        </div>
 
         <div class="projects__grid">
-            <article class="project-card" *ngFor="let project of projects"
-                [class.project-card--featured]="project[1].featured">
-                <div class="project-card__image" [style.background]="projectColors[project[0]]">
-                    <div class="project-card__icon">{{ projectIcons[project[0]] || '✨' }}</div>
+            <article class="project-card" *ngFor="let key of projectKeys"
+                [class.project-card--featured]="isFeatured(key)">
+                <div class="project-card__image" [style.background]="projectColors[key]">
+                    <div class="project-card__icon">{{ projectIcons[key] }}</div>
                 </div>
                 <div class="project-card__content">
-                    <span class="project-card__year">{{ project[1].year }}</span>
-                    <h3 class="project-card__title">{{ project[1].title }}</h3>
-                    <p class="project-card__description">{{ project[1].description }}</p>
+                    <span class="project-card__year">{{ 'projects.items.' + key + '.year' | translate }}</span>
+                    <h3 class="project-card__title">{{ 'projects.items.' + key + '.title' | translate }}</h3>
+                    <p class="project-card__description">{{ 'projects.items.' + key + '.description' | translate }}</p>
                     <div class="project-card__meta">
-                        <span class="project-card__org">{{ project[1].org }}</span>
-                        <span class="project-card__badge" *ngIf="project[1].badge">{{ project[1].badge }}</span>
+                        <span class="project-card__org">{{ 'projects.items.' + key + '.org' | translate }}</span>
+                        <span class="project-card__badge"
+                            *ngIf="('projects.items.' + key + '.badge' | translate) as badge">
+                            <ng-container *ngIf="badge !== 'projects.items.' + key + '.badge'">{{ badge
+                                }}</ng-container>
+                        </span>
                     </div>
                 </div>
             </article>

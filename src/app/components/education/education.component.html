@@ -1,23 +1,27 @@
 <section class="education section" id="education">
     <div class="container">
-        <h2 class="section__title section__title--gradient">{{ i18n.t('education.title') }}</h2>
+        <div class="section__header">
+            <h2 class="section__title">{{ 'education.title' | translate }}</h2>
+        </div>
 
         <div class="education__grid">
             <div class="education__degrees">
-                <div class="degree-card" *ngFor="let degree of degrees"
-                    [class.degree-card--master]="degree[0] === 'master'">
-                    <div class="degree-card__badge">{{ degree[1].badge }}</div>
-                    <h3 class="degree-card__title">{{ degree[1].title }}</h3>
-                    <p class="degree-card__institution">{{ degree[1].institution }}</p>
-                    <p class="degree-card__year">{{ degree[1].year }}</p>
-                    <p class="degree-card__description">{{ degree[1].description }}</p>
+                <div class="degree-card" *ngFor="let key of degreeKeys" [class.degree-card--master]="key === 'master'">
+                    <div class="degree-card__badge">{{ 'education.degrees.' + key + '.badge' | translate }}</div>
+                    <h3 class="degree-card__title">{{ 'education.degrees.' + key + '.title' | translate }}</h3>
+                    <p class="degree-card__institution">{{ 'education.degrees.' + key + '.institution' | translate }}
+                    </p>
+                    <p class="degree-card__year">{{ 'education.degrees.' + key + '.year' | translate }}</p>
+                    <p class="degree-card__description">{{ 'education.degrees.' + key + '.description' | translate }}
+                    </p>
                 </div>
             </div>
 
             <div class="education__certifications">
-                <h3 class="education__certifications-title">{{ i18n.t('education.certifications.title') }}</h3>
+                <h3 class="education__certifications-title">{{ 'education.certifications.title' | translate }}</h3>
 
-                <div class="certification-item" *ngFor="let cert of certifications; let i = index">
+                <div class="certification-item"
+                    *ngFor="let cert of ('education.certifications.items' | translate); let i = index">
                     <div class="certification-item__icon">{{ certIcons[i] || '📜' }}</div>
                     <div class="certification-item__content">
                         <h4 class="certification-item__title">{{ cert.title }}</h4>

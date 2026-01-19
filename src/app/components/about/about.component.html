@@ -1,6 +1,6 @@
 <section class="about section" id="about">
     <div class="container">
-        <h2 class="section__title section__title--gradient">{{ i18n.t('about.title') }}</h2>
+        <h2 class="section__title">{{ 'about.title' | translate }}</h2>
 
         <div class="about__content">
             <div class="about__photo">
@@ -8,19 +8,18 @@
                     <div class="about__photo-placeholder">
                         <span>LV</span>
                     </div>
-                    <div class="about__photo-glow"></div>
                 </div>
             </div>
 
             <div class="about__text">
-                <p class="about__intro" [innerHTML]="i18n.t('about.intro')"></p>
-                <p class="about__description">{{ i18n.t('about.description') }}</p>
+                <p class="about__intro" [innerHTML]="'about.intro' | translate"></p>
+                <p class="about__description">{{ 'about.description' | translate }}</p>
 
                 <div class="about__competencies">
-                    <div class="competency-card" *ngFor="let comp of competencies">
-                        <div class="competency-card__icon">{{ competencyIcons[comp[0]] || '✨' }}</div>
-                        <h3 class="competency-card__title">{{ comp[1].title }}</h3>
-                        <p class="competency-card__text">{{ comp[1].text }}</p>
+                    <div class="competency-card" *ngFor="let key of competencyKeys">
+                        <div class="competency-card__icon">{{ competencyIcons[key] }}</div>
+                        <h3 class="competency-card__title">{{ 'about.competencies.' + key + '.title' | translate }}</h3>
+                        <p class="competency-card__text">{{ 'about.competencies.' + key + '.text' | translate }}</p>
                     </div>
                 </div>
             </div>

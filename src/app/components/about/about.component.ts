@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Competency {
   title: string;
@@ -19,10 +19,7 @@ export class AboutComponent {
     environmental: '🌱'
   };
 
-  constructor(public i18n: I18nService) {}
+  competencyKeys = ['territorial', 'participatory', 'education', 'environmental'];
 
-  get competencies(): [string, Competency][] {
-    const comps = this.i18n.getSection<Record<string, Competency>>('about.competencies');
-    return Object.entries(comps);
-  }
+  constructor(public translate: TranslateService) {}
 }

@@ -1,14 +1,5 @@
 import { Component } from '@angular/core';
-import { I18nService } from '../../services/i18n.service';
-
-interface ProjectItem {
-  title: string;
-  description: string;
-  org: string;
-  year: string;
-  badge?: string;
-  featured?: boolean;
-}
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
@@ -16,6 +7,8 @@ interface ProjectItem {
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
+  projectKeys = ['kosmofono', 'somos', 'cecrea', 'dialogos'];
+  
   projectIcons: Record<string, string> = {
     kosmofono: '🎵',
     somos: '🌊',
@@ -29,11 +22,12 @@ export class ProjectsComponent {
     cecrea: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
     dialogos: 'linear-gradient(135deg, #dc2626 0%, #f87171 100%)'
   };
+  
+  featuredProjects = ['kosmofono'];
 
-  constructor(public i18n: I18nService) {}
+  constructor(public translate: TranslateService) {}
 
-  get projects(): [string, ProjectItem][] {
-    const p = this.i18n.getSection<Record<string, ProjectItem>>('projects.items');
-    return Object.entries(p);
+  isFeatured(key: string): boolean {
+    return this.featuredProjects.includes(key);
   }
 }

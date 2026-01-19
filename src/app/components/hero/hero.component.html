@@ -5,16 +5,16 @@
     <div class="hero__geo hero__geo--triangle"></div>
 
     <div class="hero__content">
-        <p class="hero__greeting">{{ i18n.t('hero.greeting') }}</p>
+        <p class="hero__greeting">{{ 'hero.greeting' | translate }}</p>
         <h1 class="hero__title">Laura Vargas Gaete</h1>
-        <p class="hero__subtitle">{{ i18n.t('hero.subtitle') }}</p>
-        <p class="hero__tagline">{{ i18n.t('hero.tagline') }}</p>
+        <p class="hero__subtitle">{{ 'hero.subtitle' | translate }}</p>
+        <p class="hero__tagline">{{ 'hero.tagline' | translate }}</p>
 
         <div class="hero__cta">
-            <a href="#projects" class="btn btn--primary" (click)="scrollTo($event, '#projects')">{{
-                i18n.t('hero.cta.discover') }}</a>
-            <a href="#contact" class="btn btn--outline" (click)="scrollTo($event, '#contact')">{{
-                i18n.t('hero.cta.contact') }}</a>
+            <a href="#projects" class="btn btn--primary" (click)="scrollTo($event, '#projects')">{{ 'hero.cta.discover'
+                | translate }}</a>
+            <a href="#contact" class="btn btn--outline" (click)="scrollTo($event, '#contact')">{{ 'hero.cta.contact' |
+                translate }}</a>
         </div>
     </div>
 

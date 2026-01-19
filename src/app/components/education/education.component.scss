@@ -4,9 +4,38 @@
 .education {
     background: $bauhaus-white;
     position: relative;
+    overflow: hidden;
+}
+
+// Geometric decoration
+.education__geo {
+    position: absolute;
+    pointer-events: none;
+
+    &--circle {
+        width: 200px;
+        height: 200px;
+        background: $bauhaus-yellow;
+        border-radius: 50%;
+        top: -50px;
+        right: 10%;
+        opacity: 0.3;
+    }
+
+    &--square {
+        width: 120px;
+        height: 120px;
+        background: $bauhaus-blue;
+        bottom: 10%;
+        left: -40px;
+        transform: rotate(-15deg);
+        opacity: 0.2;
+    }
 }
 
 .education__grid {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $space-3xl;
@@ -22,19 +51,38 @@
     gap: $space-xl;
 }
 
+// Degree cards - Bauhaus style
 .degree-card {
     padding: $space-xl;
-    border-left: $border-heavy solid $bauhaus-black;
-    background: $bauhaus-light;
-    transition: transform $transition-base;
+    background: $bauhaus-white;
+    border: $border-thick solid $bauhaus-black;
+    position: relative;
+    transition: transform $transition-base, box-shadow $transition-base;
 
     &:hover {
-        transform: translateX(10px);
+        transform: translate(-6px, -6px);
+        box-shadow: 12px 12px 0 $bauhaus-black;
+    }
+
+    // Color stripe on top
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $border-heavy;
+        background: $bauhaus-black;
     }
 
     &--master {
-        border-left-color: $bauhaus-red;
-        background: rgba($bauhaus-red, 0.05);
+        &::before {
+            background: $bauhaus-red;
+        }
+
+        .degree-card__badge {
+            background: $bauhaus-red;
+        }
     }
 
     &__badge {
@@ -42,14 +90,11 @@
         font-size: $text-xs;
         font-weight: $font-bold;
         text-transform: uppercase;
-        padding: $space-xs $space-sm;
+        letter-spacing: 0.05em;
+        padding: $space-xs $space-md;
         background: $bauhaus-black;
         color: $bauhaus-white;
-        margin-bottom: $space-sm;
-
-        .degree-card--master & {
-            background: $bauhaus-red;
-        }
+        margin-bottom: $space-md;
     }
 
     &__title {
@@ -57,6 +102,7 @@
         font-weight: $font-bold;
         text-transform: uppercase;
         margin-bottom: $space-sm;
+        line-height: 1.2;
     }
 
     &__institution {
@@ -66,7 +112,7 @@
     }
 
     &__year {
-        font-size: $text-sm;
+        font-size: $text-lg;
         font-weight: $font-bold;
         color: $bauhaus-blue;
         margin-bottom: $space-md;
@@ -75,8 +121,26 @@
     &__description {
         font-size: $text-sm;
         color: $text-secondary;
-        line-height: 1.6;
+        line-height: 1.7;
         margin: 0;
+    }
+}
+
+// Certifications section
+.education__certifications {
+    padding: $space-xl;
+    border: $border-thick solid $bauhaus-black;
+    position: relative;
+
+    // Yellow accent corner
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        background: $bauhaus-yellow;
     }
 }
 
@@ -85,29 +149,59 @@
     font-weight: $font-black;
     text-transform: uppercase;
     margin-bottom: $space-xl;
+    position: relative;
+
+    // Underline
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: $border-heavy;
+        background: $bauhaus-red;
+        margin-top: $space-sm;
+    }
 }
 
+// Certification items - Bauhaus style cards
 .certification-item {
-    display: flex;
-    gap: $space-md;
-    padding: $space-lg;
-    margin-bottom: $space-sm;
-    background: $bauhaus-light;
-    border: $border-thin solid rgba($bauhaus-black, 0.1);
-    transition: background $transition-fast, border-color $transition-fast;
+    padding: $space-md $space-lg;
+    margin-bottom: $space-md;
+    background: $bauhaus-white;
+    border: $border-thick solid $bauhaus-black;
+    position: relative;
+    transition: transform $transition-base, box-shadow $transition-base;
 
-    &:hover {
-        background: $bauhaus-white;
-        border-color: $bauhaus-black;
+    // Color accent on left
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $border-heavy;
+        height: 100%;
+        background: $bauhaus-blue;
     }
 
-    &__icon {
-        font-size: $text-2xl;
-        flex-shrink: 0;
+    // Alternate colors for variety
+    &:nth-child(2)::before {
+        background: $bauhaus-red;
+    }
+
+    &:nth-child(3)::before {
+        background: $bauhaus-yellow;
+    }
+
+    &:nth-child(4)::before {
+        background: $bauhaus-blue;
+    }
+
+    &:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 8px 8px 0 $bauhaus-black;
     }
 
     &__content {
-        flex: 1;
+        padding-left: $space-sm;
     }
 
     &__title {
@@ -115,6 +209,7 @@
         font-weight: $font-bold;
         text-transform: uppercase;
         margin: 0 0 $space-xs;
+        color: $bauhaus-black;
     }
 
     &__org {

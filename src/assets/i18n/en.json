@@ -197,6 +197,8 @@
     "projects": {
         "title": "Featured Projects",
         "subtitle": "Initiatives reflecting my commitment to education, community and territory",
+        "showAll": "See all projects",
+        "showLess": "Show less",
         "items": {
             "kosmofono": {
                 "title": "Kosmófono: Science and Music of Black Holes",
@@ -223,6 +225,26 @@
                 "description": "National program of encounters between authors and high school students across all regions of Chile. Methodological design, territorial coordination and inter-institutional alliance management.",
                 "org": "National Reading Plan",
                 "year": "2014-2017"
+            },
+            "frankfurt": {
+                "title": "Chile Guest of Honor - Frankfurt Book Fair",
+                "description": "Strategic management for Chile's participation as Guest of Honor at the Frankfurt International Book Fair 2027. Development of tender documents and design of global-reach reading mediation experiences.",
+                "org": "DIRAC - Ministry of Foreign Affairs",
+                "year": "2025-2027",
+                "badge": "International Reach"
+            },
+            "tejedoras": {
+                "title": "Weavers of Gorbea",
+                "description": "Community participation project focused on recognizing traditional knowledge of women weavers in the Araucanía Region. Training of local cultural managers and promotion of intangible heritage.",
+                "org": "Servicio País Cultura",
+                "year": "2011-2012"
+            },
+            "habitat": {
+                "title": "Favela Boa Vista Research",
+                "description": "Community participation assessment in informal settlements in Niterói, Brazil. Application of qualitative methodologies, in-depth interviews, focus groups and analysis with Atlas.ti and SPSS.",
+                "org": "UN-Habitat",
+                "year": "2008-2009",
+                "badge": "International"
             }
         }
     },

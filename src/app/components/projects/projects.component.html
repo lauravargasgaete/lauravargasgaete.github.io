@@ -5,8 +5,8 @@
             <p class="section__subtitle">{{ 'projects.subtitle' | translate }}</p>
         </div>
 
-        <div class="projects__grid">
-            <article class="project-card" *ngFor="let key of projectKeys"
+        <div class="projects__grid" [class.projects__grid--expanded]="isExpanded">
+            <article class="project-card" *ngFor="let key of visibleProjects"
                 [class.project-card--featured]="isFeatured(key)">
                 <div class="project-card__image" [style.background]="projectColors[key]">
                     <div class="project-card__icon">{{ projectIcons[key] }}</div>
@@ -19,12 +19,26 @@
                         <span class="project-card__org">{{ 'projects.items.' + key + '.org' | translate }}</span>
                         <span class="project-card__badge"
                             *ngIf="('projects.items.' + key + '.badge' | translate) as badge">
-                            <ng-container *ngIf="badge !== 'projects.items.' + key + '.badge'">{{ badge
-                                }}</ng-container>
+                            <ng-container *ngIf="!badge.startsWith('projects.')">{{ badge }}</ng-container>
                         </span>
                     </div>
                 </div>
             </article>
+        </div>
+
+        <!-- Expand/Collapse Button -->
+        <div class="projects__toggle">
+            <button class="projects__toggle-btn" (click)="toggleExpand()">
+                <span *ngIf="!isExpanded">
+                    {{ 'projects.showAll' | translate }}
+                    <span class="projects__toggle-count">(+{{ hiddenCount }})</span>
+                </span>
+                <span *ngIf="isExpanded">{{ 'projects.showLess' | translate }}</span>
+                <svg class="projects__toggle-icon" [class.projects__toggle-icon--up]="isExpanded" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
         </div>
     </div>
 </section>

@@ -34,8 +34,8 @@
     &--square {
         width: 150px;
         height: 150px;
-        background: $bauhaus-blue;
-        bottom: 15%;
+        background: rgba($bauhaus-blue, 0.2);
+        bottom: 28%;
         left: 5%;
         transform: rotate(15deg);
 

@@ -1,4 +1,8 @@
 <section class="education section" id="education">
+    <!-- Geometric decorations -->
+    <div class="education__geo education__geo--circle"></div>
+    <div class="education__geo education__geo--square"></div>
+
     <div class="container">
         <div class="section__header">
             <h2 class="section__title">{{ 'education.title' | translate }}</h2>
@@ -22,7 +26,6 @@
 
                 <div class="certification-item"
                     *ngFor="let cert of ('education.certifications.items' | translate); let i = index">
-                    <div class="certification-item__icon">{{ certIcons[i] || '📜' }}</div>
                     <div class="certification-item__content">
                         <h4 class="certification-item__title">{{ cert.title }}</h4>
                         <p class="certification-item__org">{{ cert.org }}</p>

@@ -19,7 +19,15 @@
 .project-card {
     background: $bauhaus-white;
     border: $border-thick solid $bauhaus-black;
-    transition: transform $transition-base, box-shadow $transition-base;
+    transition: transform $transition-base, box-shadow $transition-base, opacity $transition-base;
+    animation: fadeInUp 0.4s ease forwards;
+    opacity: 0;
+
+    @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+            animation-delay: #{($i - 1) * 0.1}s;
+        }
+    }
 
     &:hover {
         transform: translate(-6px, -6px);
@@ -49,7 +57,6 @@
             min-height: 250px;
         }
 
-        // Geometric pattern overlay
         &::after {
             content: '';
             position: absolute;
@@ -113,5 +120,65 @@
         padding: $space-xs $space-sm;
         background: $bauhaus-red;
         color: $bauhaus-white;
+    }
+}
+
+// Expand/Collapse Toggle
+.projects__toggle {
+    display: flex;
+    justify-content: center;
+    margin-top: $space-2xl;
+}
+
+.projects__toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+    padding: $space-md $space-xl;
+    font-family: $font-primary;
+    font-size: $text-sm;
+    font-weight: $font-bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: $bauhaus-white;
+    color: $bauhaus-black;
+    border: $border-thick solid $bauhaus-black;
+    cursor: pointer;
+    transition: all $transition-base;
+
+    &:hover {
+        background: $bauhaus-black;
+        color: $bauhaus-white;
+        transform: translate(-3px, -3px);
+        box-shadow: 6px 6px 0 $bauhaus-red;
+    }
+}
+
+.projects__toggle-count {
+    color: $bauhaus-red;
+
+    .projects__toggle-btn:hover & {
+        color: $bauhaus-yellow;
+    }
+}
+
+.projects__toggle-icon {
+    transition: transform $transition-base;
+
+    &--up {
+        transform: rotate(180deg);
+    }
+}
+
+// Animation
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

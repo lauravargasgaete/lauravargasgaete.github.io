@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -10,7 +11,10 @@ export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
 
-  constructor(public translate: TranslateService) {}
+  constructor(
+    public translate: TranslateService,
+    private router: Router
+  ) {}
 
   get currentLang(): string {
     return this.translate.currentLang || this.translate.defaultLang || 'es';
@@ -23,8 +27,8 @@ export class HeaderComponent {
 
   toggleLanguage(): void {
     const newLang = this.currentLang === 'es' ? 'en' : 'es';
-    this.translate.use(newLang);
-    localStorage.setItem('preferredLang', newLang);
+    // Navigate to the new language URL
+    this.router.navigate([`/${newLang}/`]);
   }
 
   toggleMenu(): void {

@@ -7,7 +7,7 @@
 
         <div class="skills__grid">
             <div class="skill-card" *ngFor="let key of skillKeys">
-                <div class="skill-card__icon" [innerHTML]="skillIcons[key]"></div>
+                <!-- <div class="skill-card__icon" [innerHTML]="skillIcons[key]"></div> -->
                 <h3 class="skill-card__title">{{ 'skills.items.' + key + '.title' | translate }}</h3>
                 <p class="skill-card__text">{{ 'skills.items.' + key + '.text' | translate }}</p>
                 <div class="skill-card__bar">

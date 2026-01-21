@@ -7,7 +7,17 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent {
-  experienceKeys = ['capitalazul', 'cecrea', 'kosmofono', 'udechile', 'culture'];
+  experienceKeys = [
+    'kosmofono',
+    'dirac',
+    'cecrea',
+    'biblioteca',
+    'maradentro',
+    'pnl',
+    'techo',
+    'spais',
+    'onu'
+  ];
 
   constructor(public translate: TranslateService) {}
 }

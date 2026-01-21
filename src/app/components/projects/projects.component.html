@@ -8,9 +8,9 @@
         <div class="projects__grid" [class.projects__grid--expanded]="isExpanded">
             <article class="project-card" *ngFor="let key of visibleProjects"
                 [class.project-card--featured]="isFeatured(key)">
-                <div class="project-card__image" [style.background]="projectColors[key]">
+                <!-- <div class="project-card__image" [style.background]="projectColors[key]">
                     <div class="project-card__icon">{{ projectIcons[key] }}</div>
-                </div>
+                </div> -->
                 <div class="project-card__content">
                     <span class="project-card__year">{{ 'projects.items.' + key + '.year' | translate }}</span>
                     <h3 class="project-card__title">{{ 'projects.items.' + key + '.title' | translate }}</h3>

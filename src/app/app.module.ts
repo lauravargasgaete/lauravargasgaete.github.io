@@ -4,6 +4,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeroComponent } from './components/hero/hero.component';
@@ -40,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'es',

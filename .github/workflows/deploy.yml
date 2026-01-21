@@ -23,20 +23,20 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-          cache-dependency-path: portfolio/package-lock.json
+          cache-dependency-path: lauravargasgaete.github.io/package-lock.json
 
       - name: Install Dependencies
         run: |
-          cd portfolio
+          cd lauravargasgaete.github.io
           npm ci
 
       - name: Build
         run: |
-          cd portfolio
+          cd lauravargasgaete.github.io
           npm run build -- --configuration production --base-href "https://lauravargasgaete.github.io/"
 
       - name: Deploy
         uses: jamesives/github-pages-deploy-action@v4
         with:
-          folder: portfolio/dist/lauravargasgaete.github.io
+          folder: lauravargasgaete.github.io/dist/lauravargasgaete.github.io
           branch: gh-pages

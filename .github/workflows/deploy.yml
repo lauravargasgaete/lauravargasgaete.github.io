@@ -1,0 +1,42 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    concurrency:
+      group: ${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: lauravargasgaete.github.io/package-lock.json
+
+      - name: Install Dependencies
+        run: |
+          cd lauravargasgaete.github.io
+          npm ci
+
+      - name: Build
+        run: |
+          cd lauravargasgaete.github.io
+          npm run build -- --configuration production --base-href "https://lauravargasgaete.github.io/"
+
+      - name: Deploy
+        uses: jamesives/github-pages-deploy-action@v4
+        with:
+          folder: lauravargasgaete.github.io/dist/lauravargasgaete.github.io
+          branch: gh-pages

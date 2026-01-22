@@ -42,6 +42,8 @@
     "experience": {
         "title": "Professional Journey",
         "subtitle": "Over 15 years building connections between communities, education and territory",
+        "showMore": "Show more experience",
+        "showLess": "Show less",
         "items": {
             "kosmofono": {
                 "title": "Producer - Kosmófono Project",

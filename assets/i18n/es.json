@@ -42,6 +42,8 @@
     "experience": {
         "title": "Trayectoria Profesional",
         "subtitle": "Más de 15 años forjando lazos entre comunidades, educación y territorio",
+        "showMore": "Ver más experiencia",
+        "showLess": "Ver menos",
         "items": {
             "kosmofono": {
                 "title": "Productora - Proyecto Kosmófono",

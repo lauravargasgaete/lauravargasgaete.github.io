@@ -50,7 +50,15 @@ export class ProjectsComponent {
     return key === 'kosmofono';
   }
 
-  toggleExpand(): void {
+  toggleExpand(buttonElement?: HTMLElement): void {
     this.isExpanded = !this.isExpanded;
+    
+    // When collapsing, scroll to the button to keep it in view
+    if (!this.isExpanded && buttonElement) {
+      // Use setTimeout to allow the DOM to update first
+      setTimeout(() => {
+        buttonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 200);
+    }
   }
 }

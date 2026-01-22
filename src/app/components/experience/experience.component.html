@@ -8,7 +8,7 @@
         <div class="timeline">
             <div class="timeline__line"></div>
 
-            <div class="timeline__item" *ngFor="let key of experienceKeys; let first = first"
+            <div class="timeline__item" *ngFor="let key of getVisibleKeys(); let first = first"
                 [class.timeline__item--highlight]="first">
                 <div class="timeline__marker" [class.timeline__marker--highlight]="first"></div>
                 <div class="timeline__content">
@@ -24,6 +24,14 @@
                         </span>
                     </div>
                 </div>
+            </div>
+
+            <!-- Toggle button to show all/less -->
+            <div class="timeline__toggle" *ngIf="experienceKeys.length > 3">
+                <button #toggleButton class="timeline__toggle-btn" (click)="toggleShowAll(toggleButton)">
+                    <span>{{ (showAll ? 'experience.showLess' : 'experience.showMore') | translate }}</span>
+                    <span class="timeline__caret" [class.timeline__caret--up]="showAll">▼</span>
+                </button>
             </div>
         </div>
     </div>

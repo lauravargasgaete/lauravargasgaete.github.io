@@ -28,7 +28,7 @@
 
         <!-- Expand/Collapse Button -->
         <div class="projects__toggle">
-            <button class="projects__toggle-btn" (click)="toggleExpand()">
+            <button #toggleButton class="projects__toggle-btn" (click)="toggleExpand(toggleButton)">
                 <span *ngIf="!isExpanded">
                     {{ 'projects.showAll' | translate }}
                     <span class="projects__toggle-count">(+{{ hiddenCount }})</span>
